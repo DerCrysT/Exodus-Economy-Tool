@@ -40,3 +40,7 @@ Beispiele: `loot | zone | ground | Classname | 3`, `trade_sell | trader | | Clas
 - Items, die per Skript auf den Boden gelegt werden (Haeuten, Trader mit `drop_feet`), zaehlen beim Aufheben als Bodenloot. Mutantenteile erkennt man in der Auswertung ueber die `skin`-Zeilen / die Skinning-Config.
 - Munitionsverbrauch (Schuesse) wird noch nicht erfasst.
 - Strahlung hat keinen eigenen Hook, solange kein Strahlungs-Mod mit bekannter API vorliegt; ein Fremd-Mod kann `EET_Tracker.Get().Add(player, cat, k1, k2, k3, count, sum)` aufrufen.
+
+### PBO bauen
+
+Der PBO-Prefix **muss `ExodusEconomyTracker` heissen** (steht in `$PBOPREFIX$.txt`, passt zu den Pfaden in `config.cpp`). Wird die PBO mit anderem Prefix gebaut (z. B. `ExodusEconomy`), findet DayZ die Skripte nicht und die Mod bleibt **still wirkungslos** – ohne Fehlermeldung. Kontrolle: Nach dem Serverstart muss `profiles/EconomyTracker/` existieren und im Script-Log `[EET] Economy-Tracker gestartet` stehen.
